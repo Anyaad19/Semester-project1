@@ -78,6 +78,24 @@
             menu.classList.toggle('active');
         });
     </script>
+
+   <script>
+   overlayToggles = document.querySelectorAll('.overlay-toggle');
+    
+    overlayToggles.forEach(toggle => {
+    toggle.addEventListener('change', function() {
+    if (this.checked) {
+    const overlay = this.closest('.gallery-item').querySelector('.overlay');
+    overlay.classList.add('fade-out');
+    setTimeout(() => {
+    this.checked = false;
+    overlay.classList.remove('fade-out');
+    }, 10000); // 10 seconds
+    }
+    });
+    });
+</script>
+
 </body>
 
 </html>
