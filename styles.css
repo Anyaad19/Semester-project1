@@ -353,10 +353,10 @@ nav a {
         padding: 0.5rem;
     }
 
-    .gallery-item .overlay {
-        opacity: 1;
-        pointer-events: touch;
-    }
+
+     .gallery-item:hover .overlay {
+      opacity: 0;
+     }
 }
 
 
@@ -390,8 +390,7 @@ nav a {
     }
 
     .gallery-item .overlay {
-      opacity: 1;
-      pointer-events: touch;
+      opacity: 0;
     }
 }
 
