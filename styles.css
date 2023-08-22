@@ -1,7 +1,8 @@
 body {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     overflow-x: hidden;
+    /* Prevent horizontal overflow */
 }
 
 /* Navbar */
@@ -15,15 +16,12 @@ body {
     position: relative;
 }
 
-.navbar .logo a {
-    font-size: 2rem;
-}
-
 .logo a {
     color: #ffffff;
     font-size: 1rem;
     text-decoration: none;
     flex: 1;
+    /* Adjust flex value */
 }
 
 .menu-toggle {
@@ -55,6 +53,7 @@ body {
         position: absolute;
         top: 1rem;
         right: 1rem;
+        /* Adjust to "right" side */
         display: flex;
     }
 
@@ -97,12 +96,14 @@ body {
 
     .logo a {
         font-size: 0.8rem;
+        /* Adjust the font size as needed */
     }
 
     .menu-toggle {
         position: absolute;
         top: 1rem;
         right: 0rem;
+        /* Adjust to "right" side */
     }
 
     .menu {
@@ -124,91 +125,104 @@ body {
     min-height: 85vh;
     font-family: Georgia, serif;
     text-align: center;
+    /* Center content horizontally */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Center content vertically */
     align-items: center;
     padding: 2rem;
-    position: relative;
-    /* Make the container relative for absolute positioning */
 }
 
-.opening-soon-box {
-    padding: 1rem;
-    border-radius: 1rem;
-    margin: 0 auto 2rem;
-    margin-left: 10rem;
-    margin-bottom: 40rem;
-    max-width: 70%;
-    text-align: center;
+.navbar .logo a {
+    font-size: 2rem;
+    /* Adjust the font size as needed */
 }
 
 .opening-soon-text {
+    margin-bottom: 45rem;
+    margin-right: 95rem;
+    /* Add some space from the title */
     color: #f8f5f5;
     font-size: 2rem;
-    margin-bottom: 0.25rem;
-}
-
-.btn-container {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .btn {
-    display: block;
+    display: inline-block;
     padding: 0.9rem 1.5rem;
     background-color: #db662f;
     color: #fff5f5;
     text-decoration: none;
     border-radius: 1.5rem;
-    margin-right: 1rem;
-    cursor: pointer;
+    position: absolute;
+    bottom: 40rem;
+    left: 7rem;
 }
 
 /* Small screens */
 @media (max-width: 576px) {
+    .opening-soon-text {
+        font-size: 1.5rem;
+        margin-bottom: 45rem;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .btn {
+        padding: 0.7rem 1rem;
+        bottom: 25rem;
+        left: 31%;
+    }
+
     .index-page {
         padding: 2rem;
         background-size: 38rem 55rem;
         margin-left: 0rem;
     }
-
-   .opening-soon-box {
-        margin-bottom: 40rem;
-         margin-right: 10rem;
-        }
-
- }
-
-
+}
 
 /* Medium screens */
-
 @media (min-width: 577px) and (max-width: 992px) {
     .index-page {
         padding: 2rem;
-        background-size: cover;
+        background-size: 65rem 85rem;
         margin-left: 0rem;
     }
 
-     .opening-soon-box {
-        margin-bottom: 40rem;
-        margin-right: 36rem;
-     }
+    .opening-soon-text {
+        font-size: 2.8rem;
+        margin-bottom: 58rem;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .btn {
+        padding: 1.7rem 2rem;
+        bottom: 12rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 /* Large screens */
-@media (min-width: 993px) and (max-width: 1600px) {
+@media (min-width: 993px) and (max-width: 1200px) {
     .index-page {
         background-size: cover;
+        margin-left: 10rem;
     }
 
-     .opening-soon-box {
-        margin-bottom: 40rem;
-        margin-right: 40rem;
-     }
+    .opening-soon-text {
+        font-size: 2.5rem;
+        margin-bottom: 25rem;
+        margin-right: 10rem;
+        text-align: left;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        bottom: 40rem;
+        left: 7rem;
+    }
 }
 
 /* every page*/
@@ -299,10 +313,6 @@ nav a {
     transition: opacity .3s;
 }
 
-.overlay.active {
-    opacity: 1;
-}
-
 .gallery-item:hover .overlay {
     opacity: 1;
 }
@@ -352,13 +362,7 @@ nav a {
     .overlay p {
         padding: 0.5rem;
     }
-
-
-     .gallery-item:hover .overlay {
-      opacity: 0;
-     }
 }
-
 
 /* Medium screens */
 @media (min-width: 577px) and (max-width: 992px) {
@@ -387,10 +391,6 @@ nav a {
     .overlay {
         left: 0;
         right: 0;
-    }
-
-    .gallery-item .overlay {
-      opacity: 0;
     }
 }
 
@@ -596,9 +596,14 @@ nav a {
 }
 
 .about-image {
-    width: 40rem;
+    width: 100px;
+    /* Set the width of the image */
     height: 20rem;
+    /* Allow the height to adjust proportionally */
     object-fit: cover;
+    /* Maintain aspect ratio and cover the container */
+    flex: 0 0 auto;
+    /* Prevent the image from growing or shrinking */
 }
 
 .about-card:hover {
@@ -623,31 +628,31 @@ nav a {
     color: #000000;
 }
 
-/* small screens */
+/* Set a breakpoint for small screens */
 @media (max-width: 576px) {
     .about-image {
-        width: 40rem;
+        /* Adjust image width and height for smaller screens */
+        width: 80px;
         height: 15rem;
     }
 
     .about-image {
-        width: 35rem;
+        /* Adjust image width and height for smaller screens */
+        width: 20rem;
         height: 15rem;
-    }
-
-     .about-cards-wrapper {
-      padding-bottom: 20rem;
     }
 }
 
-/*  medium screens */
+/* Set a breakpoint for medium screens */
 @media (min-width: 769px) and (max-width: 992px) {
     .about-card {
-        width: 40rem;
+        /* Adjust card width for medium screens */
+        width: 80%;
         margin-bottom: 1rem;
     }
 
     .about-image {
+        /* Adjust image width and height for smaller screens */
         width: 40rem;
         height: 15rem;
     }
@@ -658,19 +663,17 @@ nav a {
 
 }
 
-/* large screens */
+/* Set a breakpoint for large screens */
 @media (min-width: 993px) and (max-width: 1200px) {
     .about-card {
-        width: 40rem;
+        /* Adjust card width for large screens */
+        width: 90%;
     }
 
     .about-image {
-        width: 40rem;
+        /* Adjust image width and height for smaller screens */
+        width: 20rem;
         height: 15rem;
-    }
-    
-    .about-cards-wrapper {
-     padding-bottom: 10rem;
     }
 }
 
@@ -697,22 +700,28 @@ nav a {
         display: flex;
         flex-direction: column;
         align-items: center;
+        /* Remove max-height property */
         height: auto;
+        /* Set height to auto to allow content to expand */
         overflow-y: auto;
+        /* Add vertical scroll when content exceeds container height */
         scroll-snap-type: x mandatory;
         padding: 10px;
+        /* Add padding to the cards wrapper */
         margin-top: 0rem;
+        /* Adjust margin-top */
         margin-bottom: 8rem;
-        padding-bottom: 10rem;
+        /* Add margin to the bottom */
     }
 
     .about-card {
         width: 85%;
         height: 50%;
         margin-bottom: 0.5rem;
-        background-color: #f8fafa;
+        background-color: #6ab1a5;
         position: relative;
         z-index: 2;
+        /* Bring the cards in front of the wrapper */
     }
 
     .about-card-body {
@@ -726,7 +735,9 @@ nav a {
         background-color: #000000;
         color: #fff;
         z-index: 3;
+        /* Bring the footer in front of the cards */
         position: relative;
+        /* Ensure proper stacking context */
     }
 }
 
@@ -742,7 +753,9 @@ footer {
     background-color: #000000;
     color: #fff;
     position: fixed;
+    /* Set to fixed positioning */
     bottom: 0;
+    /* Stick to the bottom */
     width: 100%;
     box-sizing: border-box;
 }
