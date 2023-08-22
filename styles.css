@@ -351,7 +351,7 @@ nav a {
 
     .gallery-item .overlay {
         opacity: 1;
-        pointer-events: none;
+        pointer-events: touch;
     }
 }
 
@@ -387,7 +387,7 @@ nav a {
 
     .gallery-item .overlay {
       opacity: 1;
-      pointer-events: none;
+      pointer-events: touch;
     }
 }
 
@@ -415,11 +415,6 @@ nav a {
         left: 100px;
         right: 100px;
     }
-
-    .gallery-item .overlay {
-        opacity: 1;
-        pointer-events: none;
-    }
 }
 
 /* Default screens (larger than 1200px) */
@@ -444,10 +439,6 @@ nav a {
     .overlay {
         left: 230px;
         right: 230px;
-    }
-
-    .gallery-item:hover .overlay{
-        opacity: 1;
     }
 }
 
