@@ -88,9 +88,15 @@
                     item.querySelector('.overlay').classList.toggle('active');
                 }
             });
+
+            // Add touch event for mobile devices
+            item.addEventListener('touchstart', () => {
+                if (window.innerWidth <= 576) {
+                    item.querySelector('.overlay').classList.toggle('active');
+                }
+            });
         });
     });
-
     </script>
 
 </body>
