@@ -283,71 +283,15 @@ nav a {
 }
 
 
-@media (hover: hover) {
-    .gallery {
-            display: flex;
-            height: 40rem;
-            gap: 1rem;
-        }
-    
-        .gallery>div {
-            flex: 1;
-            border-radius: 1rem;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: auto 100%;
-            transition: .5s cubic-bezier(.20, .2, .3, 1);
-        }
-    
-        .gallery>div:hover {
-            flex: 3;
-        }
-    
-        .gallery-item {
-            flex: 1;
-            position: relative;
-            border-radius: 1rem;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: auto 100%;
-            transition: .5s cubic-bezier(.20, .2, .3, 1);
-        }
-    
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 230px;
-            right: 230px;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity .3s;
-        }
-    
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-    
-        .overlay h3,
-        .overlay p {
-            margin: 0;
-            padding: 10px;
-            text-align: center;
-        }
-}
+
 @media (hover: none) {
-    .gallery {
+    .gallery>div, .gallery-item {
         display: flex;
         height: 40rem;
         gap: 1rem;
     }
 
-    .gallery>div {
+    .gallery>div:active, .gallery-item:active {
         flex: 1;
         border-radius: 1rem;
         background-position: center;
