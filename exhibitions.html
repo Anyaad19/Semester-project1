@@ -79,19 +79,18 @@
         });
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Select all gallery items
-            const galleryItems = document.querySelectorAll('.gallery-item');
+    document.addEventListener("DOMContentLoaded", function () {
+        const galleryItems = document.querySelectorAll('.gallery-item');
 
-            // Loop through each gallery item
-            galleryItems.forEach(item => {
-                // Add a click event listener
-                item.addEventListener('touchstart', () => {
-                    // Toggle the 'active' class on the overlay
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 576) {
                     item.querySelector('.overlay').classList.toggle('active');
-                });
+                }
             });
         });
+    });
+
     </script>
 
 </body>
