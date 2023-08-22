@@ -348,7 +348,13 @@ nav a {
     .overlay p {
         padding: 0.5rem;
     }
+
+    .gallery-item .overlay {
+        opacity: 1;
+        pointer-events: none;
+    }
 }
+
 
 /* Medium screens */
 @media (min-width: 577px) and (max-width: 992px) {
@@ -378,6 +384,11 @@ nav a {
         left: 0;
         right: 0;
     }
+
+    .gallery-item .overlay {
+      opacity: 1;
+      pointer-events: none;
+    }
 }
 
 /* Large screens */
@@ -404,6 +415,11 @@ nav a {
         left: 100px;
         right: 100px;
     }
+
+    .gallery-item .overlay {
+        opacity: 1;
+        pointer-events: none;
+    }
 }
 
 /* Default screens (larger than 1200px) */
@@ -428,6 +444,10 @@ nav a {
     .overlay {
         left: 230px;
         right: 230px;
+    }
+
+    .gallery-item:hover .overlay{
+        opacity: 1;
     }
 }
 
