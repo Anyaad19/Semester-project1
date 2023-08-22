@@ -78,27 +78,6 @@
             menu.classList.toggle('active');
         });
     </script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (window.innerWidth <= 576) {
-                    item.querySelector('.overlay').classList.toggle('active');
-                }
-            });
-
-            // Add touch event for mobile devices
-            item.addEventListener('touchstart', () => {
-                if (window.innerWidth <= 576) {
-                    item.querySelector('.overlay').classList.toggle('active');
-                }
-            });
-        });
-    });
-    </script>
-
 </body>
 
 </html>
