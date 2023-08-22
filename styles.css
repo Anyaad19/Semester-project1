@@ -15,6 +15,10 @@ body {
     position: relative;
 }
 
+.navbar .logo a {
+    font-size: 2rem;
+}
+
 .logo a {
     color: #ffffff;
     font-size: 1rem;
@@ -125,54 +129,63 @@ body {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    position: relative;
+    /* Make the container relative for absolute positioning */
 }
 
-.navbar .logo a {
-    font-size: 2rem;
+.opening-soon-box {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 0 auto 2rem;
+    margin-left: 10rem;
+    margin-bottom: 40rem;
+    max-width: 70%;
+    text-align: center;
 }
 
 .opening-soon-text {
-    margin-bottom: 45rem;
-    margin-right: 95rem;
     color: #f8f5f5;
     font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.btn-container {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .btn {
-    display: inline-block;
+    display: block;
     padding: 0.9rem 1.5rem;
     background-color: #db662f;
     color: #fff5f5;
     text-decoration: none;
     border-radius: 1.5rem;
-    position: absolute;
-    bottom: 40rem;
-    left: 7rem;
+    margin-right: 1rem;
+    cursor: pointer;
 }
 
 /* Small screens */
 @media (max-width: 576px) {
-    .opening-soon-text {
-        font-size: 1.5rem;
-        margin-bottom: 45rem;
-        margin-right: 0;
-        text-align: center;
-    }
-
-    .btn {
-        padding: 0.7rem 1rem;
-        bottom: 25rem;
-        left: 31%;
-    }
-
     .index-page {
         padding: 2rem;
         background-size: 38rem 55rem;
         margin-left: 0rem;
     }
-}
+
+   .opening-soon-box {
+        margin-bottom: 40rem;
+         margin-right: 10rem;
+        }
+
+ }
+
+
 
 /* Medium screens */
+
 @media (min-width: 577px) and (max-width: 992px) {
     .index-page {
         padding: 2rem;
@@ -180,39 +193,22 @@ body {
         margin-left: 0rem;
     }
 
-    .opening-soon-text {
-        font-size: 2.8rem;
-        margin-bottom: 58rem;
-        margin-right: 0;
-        text-align: center;
-    }
-
-    .btn {
-        padding: 1.7rem 2rem;
-        bottom: 12rem;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+     .opening-soon-box {
+        margin-bottom: 40rem;
+        margin-right: 36rem;
+     }
 }
 
 /* Large screens */
-@media (min-width: 993px) and (max-width: 1200px) {
+@media (min-width: 993px) and (max-width: 1600px) {
     .index-page {
         background-size: cover;
     }
 
-    .opening-soon-text {
-        font-size: 2.5rem;
-        margin-bottom: 25rem;
-        margin-right: 10rem;
-        text-align: left;
-    }
-
-    .btn {
-        padding: 1rem 2rem;
-        bottom: 40rem;
-        left: 7rem;
-    }
+     .opening-soon-box {
+        margin-bottom: 40rem;
+        margin-right: 40rem;
+     }
 }
 
 /* every page*/
@@ -624,6 +620,10 @@ nav a {
         width: 35rem;
         height: 15rem;
     }
+
+     .about-cards-wrapper {
+      padding-bottom: 20rem;
+    }
 }
 
 /*  medium screens */
@@ -653,6 +653,10 @@ nav a {
     .about-image {
         width: 40rem;
         height: 15rem;
+    }
+    
+    .about-cards-wrapper {
+     padding-bottom: 10rem;
     }
 }
 
@@ -685,6 +689,7 @@ nav a {
         padding: 10px;
         margin-top: 0rem;
         margin-bottom: 8rem;
+        padding-bottom: 10rem;
     }
 
     .about-card {
@@ -707,9 +712,7 @@ nav a {
         background-color: #000000;
         color: #fff;
         z-index: 3;
-        /* Bring the footer in front of the cards */
         position: relative;
-        /* Ensure proper stacking context */
     }
 }
 
@@ -725,9 +728,7 @@ footer {
     background-color: #000000;
     color: #fff;
     position: fixed;
-    /* Set to fixed positioning */
     bottom: 0;
-    /* Stick to the bottom */
     width: 100%;
     box-sizing: border-box;
 }
