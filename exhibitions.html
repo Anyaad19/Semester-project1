@@ -85,29 +85,12 @@
 
         // Add event listener to each gallery overlay
         overlays.forEach(overlay => {
-            let touchCount = 1; // Initialize touch count
-            let timeoutId; // Store timeout ID
-
             // Toggle the 'active' class on touchstart
             overlay.addEventListener('touchstart', event => {
                 // Prevent default touch behavior
                 event.preventDefault();
 
-                clearTimeout(timeoutId); // Clear previous timeout
-
-                touchCount++;
-
-                if (touchCount === 1) {
-                    overlay.classList.toggle('active'); // Show the overlay
-
-                    // Set a timeout to reset touch count after 2 seconds
-                    timeoutId = setTimeout(() => {
-                        touchCount = 0;
-                    }, 2000);
-                } else if (touchCount === 2) {
-                    overlay.classList.remove('active'); // Hide the overlay
-                    touchCount = 0; // Reset touch count
-                }
+                overlay.classList.toggle('active'); // Toggle overlay visibility
             });
         });
     </script>
