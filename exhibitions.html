@@ -81,21 +81,27 @@
 
     <script>
         // Select all the gallery overlay elements
-        const overlay = document.querySelectorAll('.overlay');
+        const overlays = document.querySelectorAll('.overlay');
 
         // Add event listener to each gallery overlay
-        overlay.forEach(overlay => {
-            // Toggle the 'active' class on touchstart
-            overlay.addEventListener('touchstart', toggleOverlay);
-        });
+        overlays.forEach(overlay => {
+            let touchCount = 0; // Initialize touch count
 
-        // Function to toggle the 'active' class
-        function toggleOverlay(event) {
-            // Prevent default touch behavior
-            event.preventDefault();
-            // Toggle the 'active' class on the touched overlay
-            event.currentTarget.classList.toggle('active');
-        }
+            // Toggle the 'active' class on touchstart
+            overlay.addEventListener('touchstart', event => {
+                // Prevent default touch behavior
+                event.preventDefault();
+                // Toggle the 'active' class on the touched overlay
+                overlay.classList.toggle('active');
+
+                // Increment touch count and check if it's 2
+                touchCount++;
+                if (touchCount === 2) {
+                    overlay.classList.remove('active'); // Hide the overlay
+                    touchCount = 0; // Reset touch count
+                }
+            });
+        });
     </script>
 
 </body>
