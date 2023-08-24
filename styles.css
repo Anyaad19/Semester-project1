@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    /* Prevent horizontal overflow */
 }
 
 /* Navbar */
@@ -17,9 +18,10 @@ body {
 
 .logo a {
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 2rem;
     text-decoration: none;
     flex: 1;
+    /* Adjust flex value */
 }
 
 .menu-toggle {
@@ -51,6 +53,7 @@ body {
         position: absolute;
         top: 1rem;
         right: 1rem;
+        /* Adjust to "right" side */
         display: flex;
     }
 
@@ -93,12 +96,14 @@ body {
 
     .logo a {
         font-size: 0.8rem;
+        /* Adjust the font size as needed */
     }
 
     .menu-toggle {
         position: absolute;
         top: 1rem;
         right: 0rem;
+        /* Adjust to "right" side */
     }
 
     .menu {
@@ -125,17 +130,31 @@ body {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    position: relative;
+    /* Make the container relative for absolute positioning */
 }
 
-.navbar .logo a {
-    font-size: 2rem;
+.opening-soon-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 50rem;
+    margin-right: 75rem;
 }
 
 .opening-soon-text {
-    margin-bottom: 45rem;
-    margin-right: 95rem;
     color: #f8f5f5;
     font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    margin-bottom: 1;
+}
+
+.btn-container {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .btn {
@@ -145,18 +164,22 @@ body {
     color: #fff5f5;
     text-decoration: none;
     border-radius: 1.5rem;
-    position: absolute;
-    bottom: 40rem;
-    left: 7rem;
+    margin-right: 1rem;
+    cursor: pointer;
 }
 
 /* Small screens */
 @media (max-width: 576px) {
     .opening-soon-text {
-        font-size: 1.5rem;
-        margin-bottom: 45rem;
+        font-size: 1.6rem;
+        margin-bottom: 0rem;
         margin-right: 0;
         text-align: center;
+    }
+
+    .opening-soon-box {
+        margin-bottom: 40rem;
+        margin-right: 1rem;
     }
 
     .btn {
@@ -176,14 +199,14 @@ body {
 @media (min-width: 577px) and (max-width: 992px) {
     .index-page {
         padding: 2rem;
-        background-size: cover;
+        background-size: 65rem 85rem;
         margin-left: 0rem;
     }
 
     .opening-soon-text {
         font-size: 2.8rem;
-        margin-bottom: 58rem;
-        margin-right: 0;
+        margin-bottom: 0rem;
+        margin-right: 5rem;
         text-align: center;
     }
 
@@ -199,6 +222,7 @@ body {
 @media (min-width: 993px) and (max-width: 1200px) {
     .index-page {
         background-size: cover;
+        margin-left: 10rem;
     }
 
     .opening-soon-text {
@@ -258,61 +282,128 @@ nav a {
     margin-bottom: 1rem;
 }
 
-.gallery {
-    display: flex;
-    height: 40rem;
-    gap: 1rem;
+
+@media (hover: hover) {
+    .gallery {
+        display: flex;
+        height: 40rem;
+        gap: 1rem;
+    }
+
+    .gallery>div {
+        flex: 1;
+        border-radius: 1rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        transition: .5s cubic-bezier(.20, .2, .3, 1);
+    }
+
+    .gallery>div:hover {
+        flex: 3;
+    }
+
+    .gallery-item {
+        flex: 1;
+        position: relative;
+        border-radius: 1rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        transition: .5s cubic-bezier(.20, .2, .3, 1);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 230px;
+        right: 230px;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
+
+    .overlay h3,
+    .overlay p {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
 }
 
-.gallery>div {
-    flex: 1;
-    border-radius: 1rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    transition: .5s cubic-bezier(.20, .2, .3, 1);
+@media (hover: none) {
+
+    .gallery-item:active .overlay {
+        opacity: 1;
+    }
+    
+    .gallery {
+        display: flex;
+        height: 40rem;
+        gap: 1rem;
+    }
+
+    .gallery>div {
+        flex: 1;
+        border-radius: 1rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        transition: .5s cubic-bezier(.20, .2, .3, 1);
+    }
+
+    .gallery>div:hover {
+        flex: 3;
+    }
+
+    .gallery-item {
+        flex: 1;
+        position: relative;
+        border-radius: 1rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        transition: .5s cubic-bezier(.20, .2, .3, 1);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 230px;
+        right: 230px;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
+
+    .overlay h3,
+    .overlay p {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
 }
 
-.gallery>div:hover {
-    flex: 3;
-}
-
-.gallery-item {
-    flex: 1;
-    position: relative;
-    border-radius: 1rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    transition: .5s cubic-bezier(.20, .2, .3, 1);
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 230px;
-    right: 230px;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity .3s;
-}
-
-.gallery-item:hover .overlay {
-    opacity: 1;
-}
-
-.overlay h3,
-.overlay p {
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-}
 
 /* Small screens */
 @media (max-width: 576px) {
@@ -587,8 +678,13 @@ nav a {
 
 .about-image {
     width: 40rem;
+    /* Set the width of the image */
     height: 20rem;
+    /* Allow the height to adjust proportionally */
     object-fit: cover;
+    /* Maintain aspect ratio and cover the container */
+    flex: 0 0 auto;
+    /* Prevent the image from growing or shrinking */
 }
 
 .about-card:hover {
@@ -613,27 +709,31 @@ nav a {
     color: #000000;
 }
 
-/* small screens */
+/* Set a breakpoint for small screens */
 @media (max-width: 576px) {
     .about-image {
-        width: 40rem;
+        /* Adjust image width and height for smaller screens */
+        width: 80px;
         height: 15rem;
     }
 
     .about-image {
-        width: 35rem;
+        /* Adjust image width and height for smaller screens */
+        width: 20rem;
         height: 15rem;
     }
 }
 
-/*  medium screens */
+/* Set a breakpoint for medium screens */
 @media (min-width: 769px) and (max-width: 992px) {
     .about-card {
-        width: 40rem;
+        /* Adjust card width for medium screens */
+        width: 80%;
         margin-bottom: 1rem;
     }
 
     .about-image {
+        /* Adjust image width and height for smaller screens */
         width: 40rem;
         height: 15rem;
     }
@@ -644,14 +744,16 @@ nav a {
 
 }
 
-/* large screens */
+/* Set a breakpoint for large screens */
 @media (min-width: 993px) and (max-width: 1200px) {
     .about-card {
-        width: 40rem;
+        /* Adjust card width for large screens */
+        width: 90%;
     }
 
     .about-image {
-        width: 40rem;
+        /* Adjust image width and height for smaller screens */
+        width: 20rem;
         height: 15rem;
     }
 }
@@ -679,21 +781,28 @@ nav a {
         display: flex;
         flex-direction: column;
         align-items: center;
+        /* Remove max-height property */
         height: auto;
+        /* Set height to auto to allow content to expand */
         overflow-y: auto;
+        /* Add vertical scroll when content exceeds container height */
         scroll-snap-type: x mandatory;
         padding: 10px;
+        /* Add padding to the cards wrapper */
         margin-top: 0rem;
+        /* Adjust margin-top */
         margin-bottom: 8rem;
+        /* Add margin to the bottom */
     }
 
     .about-card {
         width: 85%;
         height: 50%;
         margin-bottom: 0.5rem;
-        background-color: #f8fafa;
+        background-color: #6ab1a5;
         position: relative;
         z-index: 2;
+        /* Bring the cards in front of the wrapper */
     }
 
     .about-card-body {
