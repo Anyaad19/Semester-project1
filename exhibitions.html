@@ -79,28 +79,42 @@
         });
     </script>
 
-    <script>
-        // Select all the gallery overlay elements
-        const overlays = document.querySelectorAll('.overlay');
+<script>
+    // Select all the gallery overlay elements
+    const overlays = document.querySelectorAll('.overlay');
 
-        // Add event listener to each gallery overlay
-        overlays.forEach(overlay => {
-            let isActive = false; // Initialize overlay state
+    // Add event listener to each gallery overlay
+    overlays.forEach(overlay => {
+        let touchCount = 0; // Initialize touch count
+        let touchStartTime = 0; // Store touch start time
+        const doubleTapThreshold = 300; // Threshold for detecting double tap (in milliseconds)
 
-            // Toggle the 'active' class on touchstart
-            overlay.addEventListener('touchstart', event => {
-                // Prevent default touch behavior
-                event.preventDefault();
+        // Toggle the 'active' class on double tap
+        overlay.addEventListener('touchstart', event => {
+            // Prevent default touch behavior
+            event.preventDefault();
 
-                if (isActive) {
-                    overlay.classList.remove('active'); // Hide the overlay
-                } else {
-                    overlay.classList.add('active'); // Show the overlay
-                }
-                isActive = !isActive; // Toggle the overlay state
-            });
+            const currentTime = new Date().getTime();
+
+            if (touchCount === 0) {
+                touchCount = 1;
+                touchStartTime = currentTime;
+
+                setTimeout(() => {
+                    if (touchCount === 1) {
+                        // If a single tap occurred, show the overlay
+                        overlay.classList.add('active');
+                    }
+                    touchCount = 0; // Reset touch count
+                }, doubleTapThreshold);
+            } else if (touchCount === 1 && (currentTime - touchStartTime) <= doubleTapThreshold) {
+                // If a second tap occurred within the threshold, hide the overlay
+                overlay.classList.remove('active');
+                touchCount = 0; // Reset touch count
+            }
         });
-    </script>
+    });
+</script>
 </body>
 
 </html>
