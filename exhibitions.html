@@ -78,6 +78,26 @@
             menu.classList.toggle('active');
         });
     </script>
+
+    <script>
+        // Select all the gallery overlay elements
+        const overlay = document.querySelectorAll('.overlay');
+
+        // Add event listener to each gallery overlay
+        overlay.forEach(overlay => {
+            // Toggle the 'active' class on touchstart
+            overlay.addEventListener('touchstart', toggleOverlay);
+        });
+
+        // Function to toggle the 'active' class
+        function toggleOverlay(event) {
+            // Prevent default touch behavior
+            event.preventDefault();
+            // Toggle the 'active' class on the touched overlay
+            event.currentTarget.classList.toggle('active');
+        }
+    </script>
+
 </body>
 
 </html>
