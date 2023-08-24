@@ -85,12 +85,19 @@
 
         // Add event listener to each gallery overlay
         overlays.forEach(overlay => {
+            let isActive = false; // Initialize overlay state
+
             // Toggle the 'active' class on touchstart
             overlay.addEventListener('touchstart', event => {
                 // Prevent default touch behavior
                 event.preventDefault();
 
-                overlay.classList.toggle('active'); // Toggle overlay visibility
+                if (isActive) {
+                    overlay.classList.remove('active'); // Hide the overlay
+                } else {
+                    overlay.classList.add('active'); // Show the overlay
+                }
+                isActive = !isActive; // Toggle the overlay state
             });
         });
     </script>
