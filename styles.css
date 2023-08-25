@@ -84,7 +84,7 @@ body {
 }
 
 /* Adjustments for smaller screens like iPhone SE */
-@media (max-width: 375px) {
+@media (max-width: 977px) {
     .navbar {
         align-items: center;
         padding: 0.5rem;
@@ -327,6 +327,8 @@ nav a {
         align-items: center;
         opacity: 0;
         transition: opacity .3s;
+        overflow-y: auto;
+        max-height: 80vh;
     }
 
     .gallery-item:hover .overlay {
@@ -346,7 +348,7 @@ nav a {
     .gallery-item:active .overlay {
         opacity: 1;
     }
-    
+
     .gallery {
         display: flex;
         height: 40rem;
@@ -437,11 +439,17 @@ nav a {
     .overlay {
         left: 0;
         right: 0;
+        overflow-y: auto;
+        max-height: 80vh;
     }
 
     .overlay h3,
     .overlay p {
         padding: 0.5rem;
+    }
+
+    .logo a {
+        font-size: 2rem;
     }
 }
 
@@ -472,6 +480,8 @@ nav a {
     .overlay {
         left: 0;
         right: 0;
+        overflow-y: auto;
+        max-height: 80vh;
     }
 }
 
@@ -498,6 +508,8 @@ nav a {
     .overlay {
         left: 100px;
         right: 100px;
+        overflow-y: auto;
+        max-height: 80vh;
     }
 }
 
@@ -523,6 +535,8 @@ nav a {
     .overlay {
         left: 230px;
         right: 230px;
+        overflow-y: auto;
+        max-height: 80vh;
     }
 }
 
@@ -722,6 +736,10 @@ nav a {
         width: 20rem;
         height: 15rem;
     }
+
+    .logo a {
+        font-size: 1.3rem;
+    }
 }
 
 /* Set a breakpoint for medium screens */
@@ -739,7 +757,11 @@ nav a {
     }
 
     .about-cards-wrapper {
-        padding-bottom: 10rem;
+        padding-bottom: 10rem;  
+    }
+
+    .logo a {
+     font-size: 2rem;
     }
 
 }
@@ -755,6 +777,10 @@ nav a {
         /* Adjust image width and height for smaller screens */
         width: 20rem;
         height: 15rem;
+    }
+
+    .logo a {
+     font-size: 2rem;
     }
 }
 
@@ -773,6 +799,10 @@ nav a {
         position: relative;
         top: initial;
         left: initial;
+    }
+
+    .logo a {
+     font-size: 2rem;
     }
 
     .about-cards-wrapper {
@@ -799,7 +829,7 @@ nav a {
         width: 85%;
         height: 50%;
         margin-bottom: 0.5rem;
-        background-color: #6ab1a5;
+        background-color: #ecf3f2;
         position: relative;
         z-index: 2;
         /* Bring the cards in front of the wrapper */
