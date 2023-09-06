@@ -85,6 +85,7 @@ body {
     .navbar {
         align-items: center;
         padding: 0.5rem;
+        
     }
 
     .logo {
@@ -92,7 +93,7 @@ body {
     }
 
     .logo a {
-        font-size: 0.8rem;
+        font-size: 0.5rem;
     }
 
     .menu-toggle {
@@ -124,10 +125,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
 }
-
 
 .opening-soon-box {
     background-color: rgba(0, 0, 0, 0.5);
@@ -142,7 +142,6 @@ body {
     font-size: 2rem;
     margin-bottom: 1rem;
     margin-top: 0;
-    margin-bottom: 1;
 }
 
 .btn-container {
@@ -167,20 +166,15 @@ body {
 @media (max-width: 576px) {
     .opening-soon-text {
         font-size: 1.6rem;
-        margin-bottom: 0rem;
+        margin-bottom: 1rem;
         margin-right: 0;
         text-align: center;
     }
 
-    .opening-soon-box {
-        margin-bottom: 40rem;
-        margin-right: 1rem;
-    }
-
     .btn {
         padding: 0.7rem 1rem;
-        bottom: 25rem;
-        left: 31%;
+        position: relative;
+        /* Remove bottom and left properties */
     }
 
     .index-page {
@@ -188,15 +182,23 @@ body {
         background-size: 38rem 55rem;
         margin-left: 0rem;
     }
-       
+
     .opening-soon-box {
-     background-color: rgba(0, 0, 0, 0.5);
-     padding: 2rem;
-     border-radius: 1rem;
-     margin-bottom: 50rem;
-     margin-right: 90rem;
+        background-color: rgba(0, 0, 0, 0.048);
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-bottom: 50rem;
+        margin-right: 1rem;
     }
-    
+
+    .background-image {
+        min-height: 100vh;
+        background-size: 40rem 80rem;
+    }
+
+    .logo a {
+        font-size: 1.5rem !important;
+    }
 }
 
 /* Medium screens */
@@ -227,6 +229,10 @@ body {
      border-radius: 0rem;
      margin-bottom: 40rem;
      margin-right: 1rem;
+  }
+
+  .logo a {
+    font-size: 1rem;
   }
 
 }
