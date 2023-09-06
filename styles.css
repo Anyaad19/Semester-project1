@@ -117,7 +117,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    min-height: 85vh;
+    min-height: 100vh;
     font-family: Georgia, serif;
     text-align: center;
     display: flex;
@@ -127,6 +127,7 @@ body {
     padding: 2rem;
     position: relative;
 }
+
 
 .opening-soon-box {
     background-color: rgba(0, 0, 0, 0.5);
