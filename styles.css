@@ -174,7 +174,6 @@ body {
     .btn {
         padding: 0.7rem 1rem;
         position: relative;
-        /* Remove bottom and left properties */
     }
 
     .index-page {
@@ -184,7 +183,7 @@ body {
     }
 
     .opening-soon-box {
-        background-color: rgba(0, 0, 0, 0.048);
+        background-color: rgba(0, 0, 0, 0.548);
         padding: 2rem;
         border-radius: 1rem;
         margin-bottom: 50rem;
@@ -237,8 +236,9 @@ body {
 
 }
 
+
 /* Large screens */
-@media (min-width: 993px) and (max-width: 1200px) {
+@media (min-width: 1341px) and (max-width: 1500px) {
     .index-page {
         background-size: cover;
     }
@@ -255,7 +255,11 @@ body {
             padding: 1rem;
             border-radius: 1rem;
             margin-bottom: 40rem;
-            margin-left: 50rem;
+            margin-left: 40rem;
+        }
+
+        .btn {
+            width: 10rem;
         }
 
 
@@ -854,4 +858,5 @@ footer {
     width: 100%;
     box-sizing: border-box;
 }
+
 
